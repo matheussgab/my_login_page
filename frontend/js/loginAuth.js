@@ -1,10 +1,14 @@
+const API_BASE_URL = window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : '';
+
 async function login() {
     // Get email and password from form
     const email = document.getElementById('email').value;
     const password = document.getElementById('loginPasswordId').value;
 
     // Send login request to backend
-    const response = await fetch('http://localhost:3000/api/auth/login', {
+    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -37,7 +41,7 @@ async function register() {
     const password = document.getElementById('registerPasswordId').value;
 
     // Send registration request to backend
-    const response = await fetch('http://localhost:3000/api/auth/register', {
+    const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
