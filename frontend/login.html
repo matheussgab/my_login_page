@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- Login container -->
+    <div class="login-container">
+        <h2 class="headerText" id="headerText">Login</h2>
+        <form id="loginForm" style="display: block;">
+            <!-- Email Field -->
+            <label for="email">Email:</label><br>
+            <input type="email" size="30px" id="email" name="email" required>
+
+            <br><br>
+
+            <!-- Password Field -->
+            <label for="password">Password:</label><br>
+            <input type="password" size="30px" id="loginPasswordId" name="password" required>
+            <br>
+            <input type="checkbox" id="showPasswordLogin" onclick="togglePassword(loginPasswordId, showPasswordLogin)">
+            Show Password</input>
+
+            <br><br>
+
+            <!-- Login Error -->
+            <p class="errorMessage" id="loginError" style="display: none;">
+                Invalid email or password.
+            </p>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="login()">
+                Login
+            </button>
+
+            <!-- Register Link -->
+            <p>Don't have an account?
+                <a href="#" onclick="showRegister()">
+                    Register here
+                </a>
+            </p>
+        </form>
+    </div>
+
+    <!-- Register container -->
+    <div class="register-container">
+        <form id="registerForm" style="display: none;" header="Register">
+            <!-- Name Field -->
+            <label for="registerName">Name:</label><br>
+            <input type="text" size="30px" id="registerName" name="name" required><br><br>
+
+            <!-- Email Field -->
+            <label for="registerEmail">Email:</label><br>
+            <input type="email" size="30px" id="registerEmail" name="regEmail" required><br><br>
+
+            <!-- Password Field -->
+            <label for="registerPassword">Password:</label><br>
+            <input type="password" size="30px" id="registerPasswordId" name="regPassword" required>
+            <br>
+            <input type="checkbox" id="showPasswordRegister"
+                onclick="togglePassword(registerPasswordId, showPasswordRegister)"> Show Password</input>
+
+            <br><br>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="register()">Register</button>
+
+            <!-- Login Link -->
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+        </form>
+
+        <script src="./js/loginAuth.js"></script>
+</body>
+
+</html>
