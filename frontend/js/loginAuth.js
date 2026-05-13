@@ -1,7 +1,3 @@
-const API_BASE_URL = window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : '';
-
 async function login() {
     // Get email and password from form
     const email = document.getElementById('email').value;
