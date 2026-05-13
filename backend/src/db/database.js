@@ -11,12 +11,26 @@ const db = new sqlite3.Database('./database.db', (err) => {
 
 // Create the users table
 db.serialize(() => {
+    // Users table
     db.run(`
         CREATE TABLE IF NOT EXISTS users (  
             id            INTEGER PRIMARY KEY AUTOINCREMENT,
             email         TEXT NOT NULL UNIQUE,
             password_hash TEXT NOT NULL  
         )
+    `);
+
+    // Products table
+    db.run(`
+        CREATE TABLE IF NOT EXISTS annotations (
+        id         INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id    INTEGER NOT NULL,
+        title      TEXT NOT NULL,
+        content    TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    )
     `);
 });
 

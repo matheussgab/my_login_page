@@ -20,5 +20,12 @@ function logout() {
 
 function openCalculator() {
     window.location.href = './calculator.html';
-    // window.open('./calculator.html', '_blank');
+}
+
+function createAnnotations() {
+    window.location.href = './createAnnotations.html';
+}
+
+function openAnnotations() {
+    window.location.href = './viewAnnotations.html';
 }

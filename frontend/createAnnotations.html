@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotations</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/createAnnotations.js"></script>
+</head>
+
+<body>
+    <div class="annotationCreate">
+        <h1>Annotations page</h1>
+
+        <button id="backButton" type="button" onclick="window.history.back()" style="margin-bottom: 10px;">
+            Back to the Main page
+        </button>
+
+        <form id="annotationForm">
+            <label for="annotationTitle">Title</label>
+            <br>
+            <input type="text" id="annotationTitle" name="annotationTitle" size="35px">
+            <br><br>
+            <label for="annotationInput">Enter your annotation:</label>
+            <br>
+            <input type="text" id="annotationInput" name="annotationInput" size="35px">
+            <br><br>
+            
+            <button type="button" onclick="createAnnotation(event)">
+                Create Annotation
+            </button>
+
+            <!-- Create Annotation Error -->
+            <p class="errorMessage" id="annotationError" style="display: none;">
+                Failed to create annotation.
+            </p>
+
+        </form>
+    </div>
+</body>
+
+</html>

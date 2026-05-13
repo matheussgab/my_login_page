@@ -28,6 +28,16 @@ body {
     margin-top: 1px;
 }
 
-background-image {
-    background-image: url('../assets/lego-background.jpg');
+.annotationCreate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.annotationPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
